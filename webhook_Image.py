@@ -15,7 +15,7 @@ def sendBot(url, image_path):
         fcont = f.read()
         # 转化图片的base64
         ls_f = base64.b64encode(fcont)
-        # 计算文件的md5
+        # 计算图片的md5
         fmd5 = hashlib.md5(fcont)
     data = {"msgtype": "image", "image": {"base64": ls_f.decode('utf8'), "md5": fmd5.hexdigest()}}
     data_json = json.dumps(data)
